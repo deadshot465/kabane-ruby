@@ -12,7 +12,7 @@ module Commands
           embed.author = Discordrb::Webhooks::EmbedAuthor.new
           embed.author.name = '怪物事変の夏羽'
           embed.author.icon_url = client.bot_user.avatar_url
-          embed.footer = Discordrb::Webhooks::EmbedFooter.new text: '夏羽ボット：リリース 0.3 | 2021-03-28'
+          embed.footer = Discordrb::Webhooks::EmbedFooter.new text: '夏羽ボット：リリース 0.4 | 2021-04-11'
           embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new url: RUBY_LOGO
           embed.colour = RUBY_COLOR
           embed.title = ''
