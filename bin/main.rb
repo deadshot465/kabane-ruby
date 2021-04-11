@@ -5,6 +5,7 @@ require 'discordrb'
 require_relative 'commands/about'
 require_relative 'commands/admin_commands'
 require_relative 'commands/commands'
+require_relative 'commands/eval'
 require_relative 'commands/owoify'
 require_relative 'commands/ping'
 
@@ -16,6 +17,7 @@ client = Discordrb::Commands::CommandBot.new(token: ENV['TOKEN'],
 PRESENCES = %w[クレープ ピザ お菓子 稽古中 織との喧嘩 ミッション 依頼 親探し].freeze
 COMMANDS = [
   Commands.method(:about),
+  Commands.method(:eval),
   Commands.method(:owoify),
   Commands.method(:ping),
   Commands.method(:response)

@@ -1,6 +1,7 @@
-# frozen_string_literals: true
+# frozen_string_literal: true
 
 require 'discordrb'
+require_relative '../utils/util'
 
 module Commands
   class << self
@@ -12,8 +13,8 @@ module Commands
           embed.author.name = '怪物事変の夏羽'
           embed.author.icon_url = client.bot_user.avatar_url
           embed.footer = Discordrb::Webhooks::EmbedFooter.new text: '夏羽ボット：リリース 0.3 | 2021-03-28'
-          embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new url: 'https://cdn.discordapp.com/attachments/811517007446671391/812998597628133386/1024px-Ruby_logo.png'
-          embed.colour = 0x7C1A31
+          embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new url: RUBY_LOGO
+          embed.colour = RUBY_COLOR
           embed.title = ''
           embed.fields = []
         end
