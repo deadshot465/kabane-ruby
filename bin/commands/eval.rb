@@ -61,6 +61,12 @@ module Commands
 
       return false if response.nil? || response_body['stdout'].nil? || response_body['stdout'] == ''
 
+      description = "これは**#{event.author.display_name}**が教えてくれたコードの解釈結果です。\n```bash\n#{Base64.decode64(response_body['stdout'])}\n```"
+      if description.length > 2047
+        event.respond('ごめん。そのコードの解釈結果は長すぎて、Discordはそれを許しませんので、俺もどうしようもない。')
+        return true
+      end
+
       event.channel.send_embed do |embed|
         embed.author = Discordrb::Webhooks::EmbedAuthor.new
         embed.author.name = event.author.display_name
