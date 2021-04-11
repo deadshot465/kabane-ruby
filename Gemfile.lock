@@ -24,6 +24,7 @@ GEM
     opus-ruby (1.0.1)
       ffi
     owoify_rb (0.1.0)
+    rbs (1.1.1)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
@@ -49,6 +50,7 @@ DEPENDENCIES
   discordrb
   dotenv
   owoify_rb
+  rbs
   sorbet
   sorbet-runtime
 

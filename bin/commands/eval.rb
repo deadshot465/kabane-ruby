@@ -51,7 +51,7 @@ module Commands
       response_body = JSON.parse(response.body)
       if !response_body['stderr'].nil? && response_body['stderr'] != ''
         stderr = Base64.decode64(response_body['stderr'])
-        event.respond("何かおかしいことが発生しました。ミハイさんに確認した方が良さそうだ：#{stderr}")
+        event.respond("何かおかしいことが発生しました。ミハイさんに確認してもらった方が良さそうだ：#{stderr}")
         if !response_body['message'].nil? && response_body['message'] != ''
           message = Base64.decode64(response_body['message'])
           event.respond("ちなみにこれは他のメッセージらしいです：#{message}")

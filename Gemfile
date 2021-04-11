@@ -8,5 +8,6 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 gem 'discordrb'
 gem 'dotenv'
 gem 'owoify_rb'
+gem 'rbs'
 gem 'sorbet', group: :development
 gem 'sorbet-runtime'

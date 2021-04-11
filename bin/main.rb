@@ -12,7 +12,7 @@ require_relative 'commands/ping'
 Dotenv.load('.env', '../.env')
 client = Discordrb::Commands::CommandBot.new(token: ENV['TOKEN'],
                                              prefix: ENV['PREFIX'],
-                                             command_doesnt_exist_message: '俺はこのコマンドを見つけていなかった。',
+                                             command_doesnt_exist_message: '俺はこのコマンドを見つけられなかった。',
                                              ignore_bots: true)
 PRESENCES = %w[クレープ ピザ お菓子 稽古中 織との喧嘩 ミッション 依頼 親探し].freeze
 COMMANDS = [
