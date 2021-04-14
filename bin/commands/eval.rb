@@ -56,7 +56,7 @@ module Commands
           message = Base64.decode64(response_body['message'])
           event.respond("ちなみにこれは他のメッセージらしいです：#{message}")
         end
-        return false
+        return true
       end
 
       return false if response.nil? || response_body['stdout'].nil? || response_body['stdout'] == ''
