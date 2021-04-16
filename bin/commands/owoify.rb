@@ -11,7 +11,8 @@ module Commands
                               usage: "#{ENV['PREFIX']}owoify <テキスト>",
                               min_args: 1,
                               arg_types: [String]) do |event|
-        content = event.content[COMMAND_LENGTH..]
+        command_length = "#{ENV['PREFIX']}owoify ".length
+        content = event.content[command_length..]
         event.respond(Owoify.owoify(content, 'uwu'))
       end
     end

@@ -22,8 +22,9 @@ module Commands
         http.use_ssl = true
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
+        command_length = "#{ENV['PREFIX']}eval ".length
         request = Net::HTTP::Post.new(SUBMISSION_URL, header)
-        code = event.content[COMMAND_LENGTH..].split(/\n/)
+        code = event.content[command_length..].split(/\n/)
         actual_code = code[2..(code.length - 2)].join('; ')
 
         request.body = {
@@ -72,7 +73,7 @@ module Commands
         embed.author.name = event.author.display_name
         embed.author.icon_url = event.author.avatar_url
         embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new url: RUBY_LOGO
-        embed.colour = RUBY_COLOR
+        embed.colour = KABANE_COLOR
         embed.description = "これは**#{event.author.display_name}**が教えてくれたコードの解釈結果です。\n```bash\n#{Base64.decode64(response_body['stdout'])}\n```"
         embed.title = ''
         embed.fields = [
