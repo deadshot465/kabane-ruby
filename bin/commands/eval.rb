@@ -25,7 +25,7 @@ module Commands
         command_length = "#{ENV['PREFIX']}eval ".length
         request = Net::HTTP::Post.new(SUBMISSION_URL, header)
         code = event.content[command_length..].split(/\n/)
-        actual_code = code[2..(code.length - 2)].join('; ')
+        actual_code = code[1..(code.length - 2)].join('; ')
 
         request.body = {
           language_id: RUBY_LANG_ID,
