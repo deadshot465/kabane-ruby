@@ -11,3 +11,4 @@ gem 'owoify_rb'
 gem 'rbs'
 gem 'sorbet', group: :development
 gem 'sorbet-runtime'
+gem 'tapioca', group: :development, require: false
