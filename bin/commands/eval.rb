@@ -62,7 +62,8 @@ module Commands
 
       return false if response.nil? || response_body['stdout'].nil? || response_body['stdout'] == ''
 
-      description = "これは**#{event.author.display_name}**が教えてくれたコードの解釈結果です。\n```bash\n#{Base64.decode64(response_body['stdout'])}\n```"
+      result = Base64.decode64(response_body['stdout']).force_encoding('utf-8')
+      description = "これは**#{event.author.display_name.force_encoding('utf-8')}**が教えてくれたコードの解釈結果です。\n```bash\n#{result}\n```"
       if description.length > 2047
         event.respond('ごめん。そのコードの解釈結果は長すぎて、Discordはそれを許しませんので、俺もどうしようもない。')
         return true
@@ -74,7 +75,7 @@ module Commands
         embed.author.icon_url = event.author.avatar_url
         embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new url: RUBY_LOGO
         embed.colour = KABANE_COLOR
-        embed.description = "これは**#{event.author.display_name}**が教えてくれたコードの解釈結果です。\n```bash\n#{Base64.decode64(response_body['stdout'])}\n```"
+        embed.description = description
         embed.title = ''
         embed.fields = [
           Discordrb::Webhooks::EmbedField.new(name: '費やす時間', value: "#{response_body['time']} 秒", inline: true),
