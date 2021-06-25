@@ -1,0 +1,7 @@
+module JudgeZero
+  def self.generate_auth_header: (String host) -> Hash
+
+  private
+
+  def self.handle_error: (Hash response) -> Hash
+end
