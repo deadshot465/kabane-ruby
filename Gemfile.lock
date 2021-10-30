@@ -3,9 +3,7 @@ GEM
   specs:
     ast (2.4.2)
     coderay (1.1.3)
-    colorize (0.8.1)
-    commander (4.6.0)
-      highline (~> 2.0.0)
+    diff-lcs (1.4.4)
     discordrb (3.4.0)
       discordrb-webhooks (~> 3.3.0)
       ffi (>= 1.9.24)
@@ -18,61 +16,66 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.6)
     event_emitter (0.2.6)
-    ffi (1.15.3)
-    highline (2.0.3)
+    ffi (1.15.4)
     http-accept (1.7.0)
     http-cookie (1.0.4)
       domain_name (~> 0.5)
     method_source (1.0.0)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2021.0704)
+    mime-types-data (3.2021.0901)
     netrc (0.11.0)
     opus-ruby (1.0.1)
       ffi
     owoify_rb (0.1.0)
-    parlour (6.0.1)
-      commander (~> 4.5)
-      parser
-      rainbow (~> 3.0)
-      sorbet-runtime (>= 0.5)
     parser (3.0.2.0)
       ast (~> 2.4.1)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    rainbow (3.0.0)
-    rbs (1.4.0)
+    rbi (0.0.6)
+      ast
+      parser
+      sorbet-runtime (>= 0.5.9204)
+      unparser
+    rbs (1.6.2)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    sorbet (0.5.9053)
-      sorbet-static (= 0.5.9053)
-    sorbet-runtime (0.5.9053)
-    sorbet-static (0.5.9053-universal-darwin-20)
-    spoom (1.1.2)
-      colorize
-      sorbet (>= 0.5.6347)
-      sorbet-runtime
+    sorbet (0.5.9292)
+      sorbet-static (= 0.5.9292)
+    sorbet-runtime (0.5.9292)
+    sorbet-static (0.5.9292-universal-darwin-20)
+    spoom (1.1.5)
+      sorbet (>= 0.5.9204)
+      sorbet-runtime (>= 0.5.9204)
       thor (>= 0.19.2)
-    tapioca (0.4.24)
+    tapioca (0.5.4)
       bundler (>= 1.17.3)
-      parlour (>= 2.1.0)
       pry (>= 0.12.2)
+      rbi
       sorbet-runtime
-      sorbet-static (>= 0.4.4471)
+      sorbet-static (>= 0.5.6200)
       spoom
       thor (>= 0.19.2)
+      yard-sorbet
     thor (1.1.0)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.7.7)
+    unf_ext (0.0.8)
+    unparser (0.6.0)
+      diff-lcs (~> 1.3)
+      parser (>= 3.0.0)
     websocket (1.2.9)
     websocket-client-simple (0.3.0)
       event_emitter
       websocket
+    yard (0.9.26)
+    yard-sorbet (0.6.0)
+      sorbet-runtime (>= 0.5)
+      yard (>= 0.9)
 
 PLATFORMS
   arm64-darwin-20
